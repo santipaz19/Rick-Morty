@@ -1,0 +1,11 @@
+.tarjetas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    flex-wrap: wrap;
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
