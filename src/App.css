@@ -9,18 +9,35 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100vw;
-    height: 100vh;
     font-family: rick;
     font-size: 21px;
     color: white;
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+
+    padding-top: 10px;
+
 }
 
+.nav-container {
+    display: flex;
+    justify-content: center;
+    ;
+}
 
 .nav {
     display: flex;
-    justify-content: flex-end;
-    background-color: rgb(84, 84, 240);
-    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
+    border-radius: 2em;
+    width: 95vw;
+    height: 3em;
+    margin-top: 15px;
+    margin-right: 10px;
+    padding: 0 10px 0 15px;
+}
+
+.rick {
+    max-width: 170px;
+    height: auto;
 }
