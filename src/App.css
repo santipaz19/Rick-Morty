@@ -13,9 +13,10 @@
     font-size: 21px;
     color: white;
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-
     padding-top: 10px;
-
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-container {
@@ -35,9 +36,4 @@
     margin-top: 15px;
     margin-right: 10px;
     padding: 0 10px 0 15px;
-}
-
-.rick {
-    max-width: 170px;
-    height: auto;
 }

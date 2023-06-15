@@ -3,7 +3,7 @@ import style from './Card.module.css'
 export default function Card({ characters }) {
    return (
       <div className={style.carta}>
-         <button className={style.close} onClick={() => alert('Simulo el cierre')}>X</button>
+         <button className={style.close} onClick={characters.onClose}>X</button>
          <div className={style.conteiner}>
             <h2 className={style.status}>{characters.status}</h2>
             <h2 className={style.status}>{characters.id}</h2>
