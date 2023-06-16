@@ -3,6 +3,9 @@ import axios from "axios";
 import { useState } from "react";
 import Cards from "./components/cards/Cards.jsx";
 import Nav from "./components/Nav/Nav";
+import { Routes, Route } from "react-router-dom";
+import About from "./components/About/About";
+import Detail from "./components/Detail/Detail";
 
 
 function App() {
@@ -26,10 +29,17 @@ function App() {
       setCharacters(characters.filter(char => char.id !== id))
    }
 
+
+
    return (
       <div className="App">
          <Nav onSearch={onSearch} />
-         <Cards characters={characters} onClose={onClose} />
+         <Routes>
+            <Route path="/Home" element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Detail/:id" element={<Detail />} />
+         </Routes>
+
       </div>
    );
 }

@@ -2,3 +2,9 @@
     width: 250px;
     height: auto;
 }
+
+.home {
+    font-size: 40px;
+    text-shadow: -1px -1px 0 #c2da43, 1px -1px 0 #c2da43, -1px 1px 0 #c2da43, 1px 1px 0 #c2da43;
+    color: rgb(67, 177, 201)
+}
