@@ -1,11 +1,14 @@
 import "./App.css";
 import axios from "axios";
-import { useState } from "react";
-import Cards from "./components/cards/Cards.jsx";
+import { useState, useEffect } from "react";
+import Cards from "./components/Cards/Cards";
 import Nav from "./components/Nav/Nav";
 import { Routes, Route } from "react-router-dom";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
+import { useLocation } from "react-router-dom";
+
+
 
 
 function App() {
@@ -29,7 +32,10 @@ function App() {
       setCharacters(characters.filter(char => char.id !== id))
    }
 
-
+   const location = useLocation();
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, [location]);
 
    return (
       <div className="App">

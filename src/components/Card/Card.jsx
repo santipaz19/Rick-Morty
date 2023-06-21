@@ -2,10 +2,10 @@
 import style from './Card.module.css'
 import { Link } from 'react-router-dom';
 
-export default function Card({ characters }) {
+export default function Card({ characters, onClose }) {
    return (
       <div className={style.carta}>
-         <button className={style.close} onClick={characters.onClose}>X</button>
+         <button className={style.close} onClick={() => onClose(characters.id)}>X</button>
          <div className={style.conteiner}>
             <h2 className={style.status}>{characters.status}</h2>
             <h2 className={style.status}>{characters.id}</h2>

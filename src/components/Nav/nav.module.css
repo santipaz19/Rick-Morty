@@ -1,10 +1,36 @@
 .rick {
     width: 250px;
     height: auto;
+
+}
+
+a {
+    text-decoration: none;
 }
 
 .home {
     font-size: 40px;
     text-shadow: -1px -1px 0 #c2da43, 1px -1px 0 #c2da43, -1px 1px 0 #c2da43, 1px 1px 0 #c2da43;
-    color: rgb(67, 177, 201)
+    color: rgb(67, 177, 201);
+    margin-top: 10px;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: center;
+    ;
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
+    border-radius: 2em;
+    width: 95vw;
+    height: 3em;
+    margin-top: 15px;
+    margin-right: 10px;
+    padding: 0 10px 0 15px;
 }
