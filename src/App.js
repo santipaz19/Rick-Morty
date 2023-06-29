@@ -3,10 +3,10 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Cards from "./components/Cards/Cards";
 import Nav from "./components/Nav/Nav";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
-import { useLocation } from "react-router-dom";
+import Form from "./components/Form/Form"
 
 
 
@@ -28,22 +28,41 @@ function App() {
          }).catch(err => alert(err.response.data.error))
    }
 
-   function onClose(id) {
-      setCharacters(characters.filter(char => char.id !== id))
-   }
+   const { pathname } = useLocation()
 
    const location = useLocation();
    useEffect(() => {
       window.scrollTo(0, 0);
    }, [location]);
 
+   const navigate = useNavigate();
+   const [access, setAccess] = useState(false);
+   const EMAIL = 'santipaz19.02@gmail.com';
+   const PASSWORD = 'miperraclara19';
+
+   function onClose(id) {
+      setCharacters(characters.filter(char => char.id !== id))
+   }
+
+
+   function login(userData) {
+      if (userData.password === PASSWORD && userData.email === EMAIL) {
+         setAccess(true);
+         navigate('/home');
+      }
+   }
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
    return (
       <div className="App">
-         <Nav onSearch={onSearch} />
+         {pathname !== "/" && <Nav onSearch={onSearch} />}
          <Routes>
-            <Route path="/Home" element={<Cards characters={characters} onClose={onClose} />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Detail/:id" element={<Detail />} />
+            <Route path="/" element={<Form login={login} />} />
+            <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/detail/:id" element={<Detail />} />
          </Routes>
 
       </div>
