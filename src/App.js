@@ -1,7 +1,7 @@
 import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Cards from "./components/Cards/Cards";
+import Cards from './components/cards/Cards.jsx'
 import Nav from "./components/Nav/Nav";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About/About";
@@ -53,7 +53,7 @@ function App() {
    }
    useEffect(() => {
       !access && navigate('/');
-   }, [access]);
+   }, [access, navigate]);
 
    return (
       <div className="App">
