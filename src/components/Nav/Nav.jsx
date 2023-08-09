@@ -7,10 +7,10 @@ export default function Nav({ onSearch }) {
         <div className={style.navContainer}>
             <div className={style.nav}>
                 <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png' alt='logo' className={style.rick}></img>
-                <Link className={style.home} to={'/Home'}>
+                <Link className={style.home} to={'/home'}>
                     <p>Home</p>
                 </Link>
-                <Link className={style.home} to={'/About'}>
+                <Link className={style.home} to={'/about'}>
                     <p>About</p>
                 </Link>
                 <SearchBar onSearch={onSearch} />
