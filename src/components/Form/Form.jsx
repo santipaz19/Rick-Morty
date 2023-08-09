@@ -24,7 +24,7 @@ function Form({ login }) {
         evento.preventDefault()
         login(userData)
     }
-    return <div>
+    return (<div>
         <form className={style.form} onSubmit={handleSubmit} >
             <label className={style.text} htmlFor="">
                 email:
@@ -48,7 +48,7 @@ function Form({ login }) {
             <br />
             <button >Submit</button>
         </form>
-    </div>;
+    </div>);
 }
 
 export default Form;
